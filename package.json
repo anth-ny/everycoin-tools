@@ -1,0 +1,11 @@
+{
+  "name": "everycoin-tools",
+  "description": "everycoin tools",
+  "author": "Anthony",
+  "dependencies": {
+    "bip39": ">=2.3.0",
+    "command-line-args": ">=4.0.7",
+    "everycoin": "0.0.13",
+    "qrcode-terminal": ">=0.11.0"
+  }
+}
