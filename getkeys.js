@@ -44,7 +44,6 @@ function bothEntered(salt, mnemonic) {
   var pubk_compressed=ec.getpublickey(msk, true)
   var address=ec.getaddress(pubk_compressed, coin)
   var wif=ec.getwif(msk, coin)
-  //qrcode.generate('litecoin:'+address);
   console.log(msk.toString('hex'))
   console.log(wif, address)
   rl.question('Hit enter to clear screen:', clear_screen_and_exit.bind(this, address))
@@ -55,7 +54,8 @@ function clear_screen_and_exit(address, ignore) {
     console.log()
   }
   console.log(address)
-  qrcode.generate('litecoin:'+address);
+  //qrcode.generate('litecoin:'+address);
+  qrcode.generate(address);
   console.log(address)
   setImmediate(process.exit)
 }

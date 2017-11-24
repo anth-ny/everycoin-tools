@@ -1,0 +1,2 @@
+getkeys and vanitygen should look up uri scheme for qr code
+consolidate qr code generation

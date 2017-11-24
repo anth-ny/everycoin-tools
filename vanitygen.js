@@ -117,7 +117,8 @@ function clear_and_display_qrcode(keypair, ignore) {
     console.log()
   }
   console.log(address)
-  qrcode.generate('litecoin:'+address);
+  //qrcode.generate('litecoin:'+address);
+  qrcode.generate(address);
   console.log(address)
   setImmediate(process.exit)
 }
