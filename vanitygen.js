@@ -24,7 +24,7 @@ Keypair.prototype.setMnemonic = function(m) {
   hash.update(m)
   this.mnemonic=m
   this.sha256=hash.digest()
-  this.pubk_compressed=ec.getpublickey(this.sha256, true)
+  this.pubk_compressed=ec.getpublickey(this.sha256, compressed)
   this.address=ec.getaddress(this.pubk_compressed, coin)
 }
 

@@ -42,7 +42,7 @@ function bothEntered(salt, mnemonic) {
   var hash=crypto.createHash('sha256')
   hash.update(mnemonic)
   var msk=hash.digest()
-  var pubk_compressed=ec.getpublickey(msk, true)
+  var pubk_compressed=ec.getpublickey(msk, compressed)
   var address=ec.getaddress(pubk_compressed, coin)
   var wif=ec.getwif(msk, coin, compressed)
   console.log(msk.toString('hex'))
