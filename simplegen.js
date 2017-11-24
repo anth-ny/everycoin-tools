@@ -61,7 +61,6 @@ function main() {
 }
 
 function generate_keypair(salt) {
-  console.log('Generating keypair...')
   var found=0
   var keypair=new Keypair
   keypair.generateEntropy()
@@ -77,12 +76,13 @@ function keypairFound(keypair) {
   var wif=ec.getwif(privk, coin, compressed)
   var address=keypair.getAddress()
   console.log()
-  console.log()
   console.log('mnemonic:',keypair.getMnemonic())
+  console.log('privk:',privk.toString('hex'))
+  console.log('wif:',wif)
+  console.log('address:',address)
   console.log()
-  console.log(privk.toString('hex'))
-  console.log(wif, address)
-  rl.question('Copy the mnemonic down and then hit enter (will clear screen):', clear_and_display_qrcode.bind(this, keypair))
+//  rl.question('Copy the mnemonic down and then hit enter (will clear screen):', clear_and_display_qrcode.bind(this, keypair))
+  setImmediate(process.exit)
 }
 
 function clear_and_display_qrcode(keypair, ignore) {
