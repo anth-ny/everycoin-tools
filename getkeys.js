@@ -11,7 +11,7 @@ var rl=readline.createInterface({
 var coin=process.argv[2]
 var version=ec.getversion(coin)
 if (typeof version === 'undefined') {
-  console.log("usage: node getkeys.js [coin]")
+  console.log("usage: node getkeys.js coin")
   process.exit()
 }
 
