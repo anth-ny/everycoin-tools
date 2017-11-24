@@ -8,6 +8,7 @@ var rl=readline.createInterface({
   input: process.stdin,
   output: process.stdout
 })
+var compressed=true
 
 function Keypair() {
 }
@@ -100,7 +101,7 @@ function generate_keypair(salt) {
 function keypairFound(keypair) {
   var coin=process.argv[2]
   var privk=keypair.getSHA256()
-  var wif=ec.getwif(privk, coin)
+  var wif=ec.getwif(privk, coin, compressed)
   var address=keypair.getAddress()
   console.log()
   console.log()

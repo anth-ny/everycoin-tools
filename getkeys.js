@@ -7,6 +7,7 @@ var rl=readline.createInterface({
   input: process.stdin,
   output: process.stdout
 })
+var compressed=true
 
 var coin=process.argv[2]
 var version=ec.getversion(coin)
@@ -43,7 +44,7 @@ function bothEntered(salt, mnemonic) {
   var msk=hash.digest()
   var pubk_compressed=ec.getpublickey(msk, true)
   var address=ec.getaddress(pubk_compressed, coin)
-  var wif=ec.getwif(msk, coin)
+  var wif=ec.getwif(msk, coin, compressed)
   console.log(msk.toString('hex'))
   console.log(wif, address)
   rl.question('Hit enter to clear screen:', clear_screen_and_exit.bind(this, address))
